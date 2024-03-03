@@ -1,0 +1,11 @@
+name: book
+channels:
+  - conda-forge
+dependencies:
+  - numpy
+  - scipy
+  - pandas
+  - matplotlib
+  - altair
+  - vega_datasets
+  - jupyter-book
