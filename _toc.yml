@@ -2,6 +2,9 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: intro
+root: root
 chapters:
-- file: test
+- file: intro_polynomial.ipynb
+- file: probability
+- file: bayesian
+- file: syllabus

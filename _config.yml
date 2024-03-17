@@ -41,7 +41,11 @@ html:
 #use MathJax 3
 sphinx:
   config:   
-    mathjax_path: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    mathjax3_config:
+      tex:
+        macros:
+          "pa": '{\partial}'
+          "avg": ['{\left\langle #1 \right\rangle}', 1]
     
 #use Latex-style math with the amsmath MyST extension
 parse:
@@ -50,3 +54,4 @@ parse:
     # including those that are enabled by default!
     - amsmath
     - dollarmath
+    - colon_fence  
