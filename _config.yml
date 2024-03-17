@@ -46,6 +46,7 @@ sphinx:
         macros:
           "pa": '{\partial}'
           "avg": ['{\left\langle #1 \right\rangle}', 1]
+          "pd": ['{\frac{\partial #1}{\partial #2}}', 2]
     
 #use Latex-style math with the amsmath MyST extension
 parse:

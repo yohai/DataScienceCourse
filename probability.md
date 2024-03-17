@@ -90,20 +90,37 @@ The term on the left hand side is the _posterior_. We'll get back to these conce
 
 Medical examination, some other 
 :::
+
 ## Information
-  
-$\RR$ 
 
 We defined statistical as the condition where $p(x|y)=p(x)$ for every $x$ and $y$. This means that the distribution of $X$ is not changed if we condition it on any particular value of $y$. Put differently: knowledge about the the random variable $Y$ does not add any information about $X$. What does _information_ mean, quantitatively, in this context? 
 
-Information is a fundamental and elusive concept which comes up in probability, data science, statistical mechanics and a bunch of other fields. You probably know that the Shannon Entropy, or information content, of a random variable $X$ is defined as 
+Information is a fundamental and elusive concept which comes up in probability, data science, statistical mechanics and a bunch of other fields. You probably know that the Shannon Entropy, or Shannon Information, of a random variable $X$ is defined as
 
 $$
 H(X) = \sum_i - p(x_i) \log p(x_i) = \avg{ \log \left(\frac{1}{p(X)}\right) }
 $$ (entropy)
 
-fds;j
- fsd;l fj fjfjfj sj 
+:::{warning}
+Here I'm using logarithms in base 2, because it's convenient when talking about information. In other context it makes more sense to use the natural logarithm. It almost never matters, and I'll use "log" pretty freely without specifying which basis is used. 
+:::
+
+Let's try to get some intuition for why it makes sense to interpret this as Information. First, we see that $H$ is the average of $\log\frac{1}{p(x)}$. We can think of $\frac{1}{p(x_i)}$ as the amount of information we'd gain if learned that $X=x_i$. It is sometimes called the "surprise". Imagine you're playing [Guess Who](https://en.wikipedia.org/wiki/Guess_Who%3F) and you have 30 suspects, of which:
+- 15 are women
+- 5 wear glasses
+- 9 have curly hair
+- 1 is named Jack
+- etc ...
+
+The goal of the game is to find who the suspect is, and you can ask yes/no questions. What would be a good question to ask (=what would be a good observable to measure)? 
+
+We think of the chosen character as a random variable $X\in \{\text{Jack, Tiffany, Bill...}\}$. We can also define the random variables for such as $G\in\{\text{True, False}\}$ which denote whether the character wars Glasses or is a Woman, respectively. If we have no prior beliefs about who the suspect is, we assume that the distribution of $X$ is uniform across all the names, $p(x_i)=\frac{1}{30}$. According to Eq. {eq}`entropy`, the information content of $X$ is thus $H(X)=\avg{\log 30} =\log 30$.
+
+We can ask "is your character Jack?", i.e. measure the observable $J = X \text{ is Jack}$, we are pretty certain that the answer will be "no". This answer will not surprise us and we'll gain very little information, only $\log \frac{30}{29}\approx 0.03$ bits, from the observation $X\ne\mbox{Jack}$. However, if the answer is "yes", which happens with probability 1/30, we'd narrow it down to a single option, and win the game. Note that the information that we'd gain is $\log 30$, which is exactly the total information content of $X$ - there's nothing more to learn. On average, we expect to gain $\frac{1}{30}\log 30+\frac{29}{30}\log\frac{30}{29}=0.21$
+
+In contrast, if we measure the observable $W = X \text{ is a woman}$ we're certain that whatever the answer would be, we'd still have 15 options left. That is, for both possible answers, we'd gain exactly $\log 2=1$ of information, which is higher (duh) than measuring $J$.
+
+
 ## Bayesian interpretation
 * Likelihood
 * Estimating the probability of a coin toss
