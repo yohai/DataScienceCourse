@@ -18,4 +18,6 @@ The student that will submit the most approved pull requests will get a 5-points
 ```
 
 ## Inspiration
-The notes were formatted in this online book format with the help Dr. [Barak Hirshberg](https://hirshberg-group.webflow.io/) from the School of Chemistry in Tel Aviv University. His excellent notes in the [Molecular Dynamics course](https://barakhirshberg.github.io/MolecularSimulations) he's giving was the main reason I ended up writing my notes like this too. They are rendered with the `jupyter-book` package.
+The notes were formatted in this online book format with the help Dr. [Barak Hirshberg](https://hirshberg-group.webflow.io/) from the School of Chemistry in Tel Aviv University. His excellent notes in his excellent [Molecular Dynamics course](https://barakhirshberg.github.io/MolecularSimulations) were the main reason I ended up writing my notes like this too. 
+
+The content is rendered by the [`jupyter-book` package](https://jupyterbook.org/).

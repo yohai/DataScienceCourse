@@ -9,7 +9,7 @@ logo: tau_logo.jpg
 # See https://jupyterbook.org/content/execute.html
 execute:
   timeout: 1000
-  execute_notebooks: cache
+  execute_notebooks: force
 
 # Define the name of the latex output file for PDF builds
 latex:
@@ -38,9 +38,10 @@ html:
   use_issues_button: true
   use_repository_button: true
 
-#use MathJax 3
+
 sphinx:
-  config:   
+  config:
+    myst_heading_anchors: 2
     mathjax3_config:
       tex:
         macros:

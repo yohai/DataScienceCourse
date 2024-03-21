@@ -2,9 +2,16 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: root
-chapters:
-- file: intro_polynomial.ipynb
-- file: probability
-- file: bayesian
-- file: syllabus
+root: chapters/root.md
+title: 'Data Science for Scientists<br>A graduate level course'
+defaults:
+  numbered: 3
+parts:
+  - caption: "Refresher on probability theory"
+    chapters:
+      - glob: chapters/probability/*
+  
+  - caption: "Syllabus"
+    chapters:
+      - file: chapters/syllabus
+        title: "Syllabus"
